@@ -54,14 +54,14 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-      
-        
-        if (value.charAt(value.length()-1)=='X'){
-        value = value.replace(value.substring(value.length()-1), "");
-        return value;
-        } else {
-        return value;
+        int index = value.indexOf(charToRemove);
+        String result = "";
+        for(int i = 0; i < value.length(); i++) {
+            if(i != index) {
+                result = result + value.charAt(i);
+            }
         }
+        return result;
     }
 
     /**

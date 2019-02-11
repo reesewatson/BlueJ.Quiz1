@@ -37,8 +37,12 @@ public class MathUtilities{
    * @return true if the number is odd, false if it is even
    */
   public Boolean isOdd(Integer number){
-      if ((number % 2) != 0);
-      return true;
+      int check = number % 2;
+      if (check != 0) {
+          return true;
+        }else {
+            return false;
+        }
   }
 
 

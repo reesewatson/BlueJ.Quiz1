@@ -65,7 +65,7 @@ public class LoopFun {
                     int charIndexPlus3 = charIndex + 3;
                     if(charIndexPlus3 > 25) {
                         int difference = (charIndexPlus3 - 25) - 1;
-                        char charResult = stringOfAlphabets.charAt(charIndexPlus3);
+                        char charResult = stringOfAlphabets.charAt(difference);
                         result = Character.toString(charResult);
                     }else{
                         char charResult = stringOfAlphabets.charAt(charIndexPlus3);
