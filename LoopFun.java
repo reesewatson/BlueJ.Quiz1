@@ -1,7 +1,6 @@
  
 
-public class LoopFun
-{
+public class LoopFun {
 
       /**
        * Given a number, return the factorial of that number.
@@ -10,8 +9,16 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+       int result;
+
+        if(number==1)
+         return 1;
+
+       result = factorial(number-1) * number;
+       return result;
+      
       }
+      
 
       /**
        * Given a phrase, get the acronym of that phrase. Acronym is the combination of
@@ -21,7 +28,19 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+         String sentence = "Ruby on Rails";
+         String[] words = sentence.split("");
+         String result = "";
+            for (int i = 0; i < words.length; i++){
+                String isolatedWord = words[i];
+                char firstLetter = isolatedWord.charAt(0);
+                String letterResult = Character.toString(firstLetter);
+                String capitalizedFirstLetter = letterResult.toUpperCase();
+                result = result + capitalizedFirstLetter;
+            }
+            return result;
+          
+          
       }
 
       /**
@@ -37,6 +56,23 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
-      }
+          String stringOfAlphabets = "abcdefghijklmnopqrstuvwxyz";
+          String result = "";
+            for(int i = 0; i < word.length(); i++) {
+                char wordChar = word.charAt(i);
+                if(Character.isLetter(wordChar)) {
+                    int charIndex = stringOfAlphabets.indexOf(wordChar);
+                    int charIndexPlus3 = charIndex + 3;
+                    if(charIndexPlus3 > 25) {
+                        int difference = (charIndexPlus3 - 25) - 1;
+                        char charResult = stringOfAlphabets.charAt(charIndexPlus3);
+                        result = Character.toString(charResult);
+                    }else{
+                        char charResult = stringOfAlphabets.charAt(charIndexPlus3);
+                        result = Character.toString(charResult); 
+                    }
+                }
+            }
+            return result;
+        }
 }
